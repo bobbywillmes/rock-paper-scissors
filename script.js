@@ -23,7 +23,13 @@ let determineMatch = (score) => {
     console.log(`gameMode is one`)
     console.log(`time to end game!`)
     if(score.me > score.computer) {
+      $('#results').css('display', 'block')
+      $('#results').addClass('win')
       $('#results').html(`<h2>Congrats! You won!</h2>`)
+    } else {
+      $('#results').css('display', 'block')
+      $('#results').addClass('lose')
+      $('#results').html(`<h2>Sorry :( you lose</h2>`)
     }
     $('#buttons button').not('#playAgain').prop('disabled', true)
     $('#playAgain').addClass('d-inline-block')
@@ -32,7 +38,13 @@ let determineMatch = (score) => {
     console.log(`gameMode is three`)
     console.log(`time to end game`)
     if(score.me > score.computer) {
+      $('#results').css('display', 'block')
+      $('#results').addClass('win')
       $('#results').html(`<h2>Congrats! You won!</h2>`)
+    } else {
+      $('#results').css('display', 'block')
+      $('#results').addClass('lose')
+      $('#results').html(`<h2>Sorry :( you lose</h2>`)
     }
     $('#buttons button').not('#playAgain').prop('disabled', true)
     $('#playAgain').addClass('d-inline-block')
@@ -50,7 +62,12 @@ let playAgain = () => {
   $('#buttons button').prop('disabled', false)
   $('#playAgain').removeClass('d-inline-block')
   $('#winner span').html('&nbsp;')
+  $('#results').css('display', 'none')
+  $('#results').removeClass()
   $('#results').html('&nbsp;')
+  $('#scoreboard td').html('0')
+  $('#winner div span').html('')
+  $('#winner div span').removeClass()
   $('#me').find('*').removeClass('active')
   $('#computer').find('*').removeClass('active')
 }
@@ -117,21 +134,21 @@ let determineGame = (move1, move2) => {
   let winnerText = ''
   switch(true) {
     case winner == 'me':
-      winnerText = 'You win'
+      winnerText = '<span class="win">You win</span>'
       score.me ++
       break
     case winner == 'computer':
-      winnerText = 'You lose'
+      winnerText = '<span class="lose">You lose</span>'
       score.computer ++
       break
     case winner == 'tie':
-      winnerText = 'It\'s a tie'
+      winnerText = '<span>It\'s a tie</span>'
   }
 
   console.log(score)
   updateScoreboard(score)
 
-  $('#winner span').html(winnerText)
+  $('#winner div').html(winnerText)
 }
 
 let moveClick = (obj) => {
@@ -166,7 +183,7 @@ let playGame = (gameMode) => {
 }
 
 let gameMode = undefined
-$('#gamemode input').on('click', function() {
+$('#gamemode button').on('click', function() {
   gameMode = $(this).attr('id')
   console.log(gameMode)
   $('#gameboard').removeClass('d-none')

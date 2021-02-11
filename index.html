@@ -16,13 +16,13 @@
     <h1>Rock Paper Scissors</h1>
   </header>
 
-  <div class="container">
-    <div id="gamemode" class="row">
-      <form>
-        <h2>Play a game</h2>
-        <input id="one" type="radio" name="game" value="one"> <label for="one">One</label> 
-        <input id="three" type="radio" name="game" value="three"> <label for="three">Two out of Three</label>
-      </form>
+  <div id="gamemode" class="container">
+    <div class="row">
+      <h2>Play a game</h2>
+    </div>
+    <div class="row">
+      <button id="one" class="btn btn-primary">One</button> &nbsp;
+      <button id="three" class="btn btn-primary">Two out of Three</button>
     </div>
   </div>
   <div id="gameboard" class="container d-none">
@@ -39,33 +39,42 @@
         <h2>Me</h2>
         <hr>
         <div class="moves">
-          <h3 class="rock">Rock</h3>
-          <h3 class="paper">Paper</h3>
-          <h3 class="scissors">Scissors</h3>
+          <img class="rock" src="./img/rock.svg" alt="Rock">
+          <img class="paper" src="./img/paper.svg" alt="Paper">
+          <img class="scissors" src="./img/scissors.svg" alt="Scissors">
         </div>
       </div>
       <div id="computer" class="col">
         <h2>Computer</h2>
         <hr>
         <div class="moves">
-          <h3 class="rock">Rock</h3>
-          <h3 class="paper">Paper</h3>
-          <h3 class="scissors">Scissors</h3>
+          <img class="rock" src="./img/rock.svg" alt="Rock">
+          <img class="paper" src="./img/paper.svg" alt="Paper">
+          <img class="scissors" src="./img/scissors.svg" alt="Scissors">
         </div>
       </div>
     </div>
-    <div id="winner" class="row">
-      <div class="col">
-        <div>
-          <span>&nbsp;</span>
-        </div>
+    <div id="winner" class="row justify-content-center">
+      <div class="col-2">
+        <span>&nbsp;</span>
       </div>
     </div>
-    <div id="scoreboard" class="row">
-      <div class="col">
-        <h3>Score</h3>
-        Me: <span class="me">0</span>
-        Computer: <span class="computer">0</span>
+    <div id="scoreboard" class="row justify-content-center">
+      <div class="col-4">
+        <table>
+          <thead>
+            <tr>
+              <th>Me</th>
+              <th>Computer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="me">&nbsp;</td>
+              <td class="computer">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div id="results"></div>

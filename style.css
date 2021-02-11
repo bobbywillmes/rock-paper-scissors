@@ -1,7 +1,3 @@
-body {
-  background: #cff;
-}
-
 .moves h3 {
   /* font-size: 300%; */
   color: #ccc;
@@ -9,4 +5,64 @@ body {
 
 .active {
   color: #b2f009 !important;
+}
+
+#gameboard {
+  position: relative;
+}
+
+#gameboard h2 {
+  text-align: center;
+}
+
+#scoreboard {
+  font-size: 200%;
+  text-align: center;
+}
+
+#scoreboard th {
+  width: 100px;
+}
+
+.moves {
+  height: 200px;
+}
+
+.moves img {
+  display: none;
+}
+
+.moves img {
+  max-height: 200px;
+}
+
+.moves img.active {
+  display: block;
+}
+
+#results {
+  display: none;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  height: 80%;
+  /* background: #aaaaaa8f; */
+}
+
+#results h2 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+}
+
+.win {
+  background: #27ca42c9;
+}
+ .lose {
+  background: #ca3f27c9;
+}
+
+#winner span {
+  padding: 5px;
 }
