@@ -166,7 +166,7 @@ let moveClick = (obj) => {
   determineMatch(score)
 }
 
-$('.btn').not('#playAgain').on('click', function() {
+$('#gameboard .btn').not('#playAgain').on('click', function() {
   moveClick($(this))
 })
 
