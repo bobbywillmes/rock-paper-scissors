@@ -1,0 +1,12 @@
+body {
+  background: #cff;
+}
+
+.moves h3 {
+  /* font-size: 300%; */
+  color: #ccc;
+}
+
+.active {
+  color: #b2f009 !important;
+}
